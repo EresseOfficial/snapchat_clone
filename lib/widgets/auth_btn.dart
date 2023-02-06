@@ -10,5 +10,9 @@ class _AuthBtnState extends State<AuthBtn> {
   @override
   Widget build(BuildContext context) {
     // snapchat login yellow button
+    return GestureDetector(
+      onTap: onPress,
+
+    )
   }
 }
