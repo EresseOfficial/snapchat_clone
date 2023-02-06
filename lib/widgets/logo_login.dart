@@ -19,7 +19,6 @@ class _LogoLoginState extends State<LogoLogin> {
               alignment: Alignment.center,
               child: Image.asset('assets/logo.png'),
               height: 160,
-
             )
           ],
         )

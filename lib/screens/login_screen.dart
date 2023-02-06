@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import '../color_constants.dart';
 import 'package:snapchat_ui/widgets/logo_login.dart';
+// import '../widgets/auth_btn.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -68,14 +69,96 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 80,
                     ),
                     Container(
-                      child: Column(
-                        children: [
-                          LogoLogin()
-                          // fieldsOnScreen()
-                        ],
-
+                      child: Image.asset('assets/logo.png'),
+                      height: 100,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "Log In to Snapchat",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w700,
                       ),
-                    )
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 30,
+                        left: 30,
+                        right: 30,
+                      ),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          labelText: "Email or Username",
+                          labelStyle: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                          ),
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your email or username';
+                          }
+                          return null;
+                        },
+                        onChanged: (value) {
+                          setState(() {
+                            email = value;
+                          });
+                        },
+                      ),
+                    ),
+
+                    Padding(
+                        padding: const EdgeInsets.only(
+                          top: 30,
+                          left: 30,
+                          right: 30,
+                        ),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          labelText: "Password",
+                          labelStyle: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                          ),
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your password';
+                          }
+                          return null;
+                        },
+                        onChanged: (value) {
+                          setState(() {
+                            password = value;
+                          });
+                        },
+                      ),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 20,
+                        right: 30,
+                      ),
+                      child: Container(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+
+
                   ],
                 ),
               )
